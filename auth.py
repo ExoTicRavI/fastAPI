@@ -38,5 +38,6 @@ def login(user : UserLogin):
         if db_user['username'] == user.username:
             if pwd_context.verify(user.password,db_user["password"]):
                 return {"Message" : "Login Successful"}
-            return {"Message" : "Password Wrong"}
+            else:
+                return {"Message" : "Password Wrong"}
     return {"Message" : "User Does Not Exist"}
